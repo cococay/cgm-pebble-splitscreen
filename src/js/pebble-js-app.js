@@ -45,7 +45,7 @@ function fetchCgmData(lastReadTime, lastBG) {
     var req = new XMLHttpRequest();
     req.open('GET', "http://nightscoutnrh2.azurewebsites.net/pebble", true); //edit name below in message
     var req2 = new XMLHttpRequest();
-    req2.open('GET', "http://nightscoutnrh2.azurewebsites.net/pebble", true); // edit name below in message 
+    req2.open('GET', "http://nightscoutnrh3.azurewebsites.net/pebble", true); // edit name below in message 
 
     req.onload = function(e) {
         console.log(req.readyState);
