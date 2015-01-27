@@ -74,23 +74,23 @@ function fetchCgmData(lastReadTime, lastBG) {
 
 
                 if (currentBG < 55)
-                    alertValue = 2;
+                    alertValue = 1;
                 else if (currentBG < 60 && currentDelta < 0)
-                    alertValue = 2;
+                    alertValue = 0;
                 else if (currentBG < 70 && sinceLastAlert > TIME_15_MINS)
-                    alertValue = 2;
+                    alertValue = 0;
                 else if (currentBG < 120 && currentTrend == 7) //DBL_DOWN
-                    alertValue = 2;
+                    alertValue = 0;
                 else if (currentBG == 100 && currentTrend !== 0) //PERFECT SCORE
                     alertValue = 1;
                 else if (currentBG > 120 && currentTrend == 1) //DBL_UP
-                    alertValue = 3;
+                    alertValue = 0;
                 else if (currentBG > 200 && sinceLastAlert > TIME_30_MINS && currentDelta > 0)
-                    alertValue = 3;
+                    alertValue = 0;
                 else if (currentBG > 250 && sinceLastAlert > TIME_30_MINS)
-                    alertValue = 3;
+                    alertValue = 0;
                 else if (currentBG > 300 && sinceLastAlert > TIME_15_MINS)
-                    alertValue = 3;
+                    alertValue = 0;
 
                 if (alertValue > 0) {
                     lastAlert = now;
